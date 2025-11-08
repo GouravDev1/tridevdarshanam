@@ -178,6 +178,7 @@
       color: white;
       cursor: pointer;
     }
+ 
 
     /* ===== TESTIMONIAL SECTION ===== */
     .testimonial-slider {
@@ -501,6 +502,61 @@
   <footer>
     <p>© 2025 Tridev Darshanam. All rights reserved.</p>
   </footer>
+
+
+  /* ===== booking details send via mail ===== */
+
+
+  <!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+
+<script>
+  // Initialize & handle booking form with EmailJS
+  document.addEventListener("DOMContentLoaded", function () {
+    // 1) initialize EmailJS with your Public Key
+    emailjs.init({
+      publicKey: "1gIDjuYomj8Iq3yZj" });   // <- use your actual public key
+
+
+    // 2) get the form element
+    const bookingForm = document.getElementById("bookingForm");
+    if (!bookingForm) {
+      console.error("❌ bookingForm element not found in DOM.");
+      return;
+    }
+
+    // 3) handle submit
+    bookingForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = bookingForm.elements["name"].value;
+      const email = bookingForm.elements["email"].value;
+      const tour = bookingForm.elements["tour"].value;
+
+      // Build the template params to match your EmailJS template fields
+      const templateParams = {
+        from_name: name,
+        from_email: email,
+        tour_name: tour
+      };
+
+      // 4) send via EmailJS - use your service and template IDs
+      emailjs.send("service_dqp15km", "template_18egqah", templateParams)
+        .then(function (response) {
+          alert("✅ Booking request sent successfully!");
+          bookingForm.reset();
+          console.log("EmailJS response:", response);
+        })
+        .catch(function (error) {
+            console.error("EmailJS Error:", error);
+                   alert("❌ Failed to send booking. Please try again later.");
+
+        });
+    });
+  });
+</script>
+
 
 </body>
 </html>
