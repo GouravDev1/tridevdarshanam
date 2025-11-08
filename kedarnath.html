@@ -126,17 +126,49 @@
       font-size: 0.95em;
       box-shadow: 0 -4px 12px rgba(0,0,0,0.1);
     }
+
+
+    /* Floating Back to Home Button */
+.float-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: linear-gradient(135deg, #4a00e0, #8e2de2);
+  color: white;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.float-btn:hover {
+  background: linear-gradient(135deg, #8e2de2, #4a00e0);
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="logo-title">
-      <img src="logo3.jpg" alt="Tridev Logo">
-      <h1>Kedarnath Darshanam</h1>
-    </div>
-    <a href="tridevdarshanam.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
-  </header>
+ <header>
+  <div class="logo-title">
+    <img src="logo3.jpg" alt="Tridev Logo">
+    <h1>Kedarnath Darshanam</h1>
+  </div>
+
+  <!-- Floating Back Button -->
+  <a href="tridevdarshanam.html" class="float-btn" title="Back to Home">
+    <i class="fas fa-arrow-left"></i>
+  </a>
+</header>
 
   <section class="hero">
     <h2>The Sacred Land of Lord Shiva</h2>
