@@ -6,7 +6,7 @@
 
   <title>Tridev Darshanam Tour & Travel Company</title>
   <meta name="description" content="Explore spiritual tours across India with Tridev Darshanam. Char Dham, Panch Kedar, Kedarnath, Amarnath, and more divine destinations.">
-  <meta name="keywords" content="Tridev Darshanam, Char Dham, Panch Kedar, Kedarnath, Amarnath, Varanasi, India spiritual tours, pilgrimage travel">
+  <meta name="keywords" content="Tridev Darshanam, Char Dham, Panch Kedar, Kedarnath, Amarnath, Varanashi, India spiritual tours, pilgrimage travel">
   <meta name="robots" content="index, follow">
 
   <meta property="og:title" content="Tridev Darshanam Tour & Travel Company">
@@ -15,28 +15,50 @@
   <meta property="og:url" content="https://tridevdarshanam.com">
   <meta name="twitter:card" content="summary_large_image">
 
+  <!-- ✅ Favicon / Browser Logo -->
+  <link rel="icon" type="image/png" href="logo3.jpg">
+
+
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter&display=swap" rel="stylesheet">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', sans-serif; background-color: #f9f9f9; color: #333; }
+    body { font-family: 'Inter', sans-serif; background-color: #f9f9f9; color: #333; scroll-behavior: smooth; }
 
-    header {
-      background: linear-gradient(to right, #2c3e50, #34495e);
+    /* ===== HERO VIDEO HEADER ===== */
+    header.hero-header {
+      position: relative;
+      height: 35vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       color: white;
-      padding: 60px 20px;
       text-align: center;
     }
 
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3em;
-      margin-bottom: 10px;
+    .hero-video {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: 0;
     }
 
+    .hero-overlay {
+      position: absolute;
+      font-size: 1.5rem;
+      top: 70%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      text-align: center;
+    }
+
+    /* ===== NAVIGATION BAR ===== */
     nav {
-      background-color: #ffffff;
+      background-color: #96dfe9;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       padding: 15px 30px;
       position: sticky;
@@ -53,15 +75,17 @@
 
     nav ul li a {
       text-decoration: none;
-      color: #2c3e50;
+      color: #0a0d4b;
+      font-size: 20px;
       font-weight: 600;
     }
 
+    /* ===== HERO IMAGE SECTION ===== */
     .hero {
-      background-image: url('india1.jpg'); /* Replace with your image */
+      background-image: url('india1.jpg');
       background-size: cover;
       background-position: center;
-      height: 80vh;
+      height: 70vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -78,16 +102,10 @@
       background: rgba(0, 0, 0, 0.4);
     }
 
-    .hero-content {
-      position: relative;
-      z-index: 1;
-    }
+    .hero-content { position: relative; z-index: 1; }
+    .hero-content h2 { font-size: 2.5em; font-family: 'Playfair Display', serif; }
 
-    .hero-content h2 {
-      font-size: 2.5em;
-      font-family: 'Playfair Display', serif;
-    }
-
+    /* ===== SECTIONS ===== */
     .section {
       padding: 60px 20px;
       text-align: center;
@@ -99,6 +117,14 @@
       font-family: 'Playfair Display', serif;
     }
 
+    /* ===== TOURS SECTION ===== */
+    .tours-section {
+      margin-top: 60px;      /* Space from hero image */
+      padding-top: 40px;
+      background-color: #f9f9f9;
+    }
+
+    /* ===== TOUR GRID ===== */
     .tour-grid {
       display: flex;
       flex-wrap: wrap;
@@ -115,25 +141,11 @@
       transition: transform 0.3s ease;
     }
 
-    .tour-card:hover {
-      transform: translateY(-10px);
-    }
+    .tour-card:hover { transform: translateY(-10px); }
+    .tour-card img { width: 100%; height: 180px; object-fit: cover; }
 
-    .tour-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-
-    .tour-card h3 {
-      margin: 15px 0 10px;
-      font-family: 'Playfair Display', serif;
-    }
-
-    .tour-card p {
-      padding: 0 15px 15px;
-      font-size: 14px;
-    }
+    .tour-card h3 { margin: 15px 0 10px; font-family: 'Playfair Display', serif; }
+    .tour-card p { padding: 0 15px 15px; font-size: 14px; }
 
     .btn {
       display: inline-block;
@@ -145,6 +157,7 @@
       border-radius: 6px;
     }
 
+    /* ===== BOOKING FORM ===== */
     form {
       max-width: 400px;
       margin: 0 auto;
@@ -166,6 +179,7 @@
       cursor: pointer;
     }
 
+    /* ===== TESTIMONIAL SECTION ===== */
     .testimonial-slider {
       max-width: 600px;
       margin: 0 auto;
@@ -178,7 +192,29 @@
       0% { opacity: 0.3; }
       100% { opacity: 1; }
     }
+    
+    /* ===== NEW: CONTACT SECTION STYLES ===== */
+    .contact-details {
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1.1em;
+      line-height: 1.8;
+      color: #333;
+    }
+    .contact-details p {
+        margin-bottom: 10px;
+    }
+    .contact-details a {
+      color: #34495e; /* Match button color */
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .contact-details a:hover {
+      text-decoration: underline;
+    }
 
+
+    /* ===== WHATSAPP CHAT BUTTON ===== */
     .whatsapp-chat {
       position: fixed;
       bottom: 20px;
@@ -192,6 +228,7 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
+    /* ===== FOOTER ===== */
     footer {
       background-color: #2c3e50;
       color: white;
@@ -199,42 +236,45 @@
       text-align: center;
     }
 
+    /* ===== RESPONSIVE DESIGN ===== */
     @media (max-width: 768px) {
-      .tour-grid {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .tour-card {
-        width: 90%;
-      }
-
-      .hero-content h2 {
-        font-size: 1.8em;
-      }
-
-      nav ul {
-        flex-direction: column;
-        gap: 15px;
-      }
+      .tour-grid { flex-direction: column; align-items: center; }
+      .tour-card { width: 90%; }
+      .hero-content h2 { font-size: 1.8em; }
+      nav ul { flex-direction: column; gap: 15px; }
     }
   </style>
 </head>
+
 <body>
 
-  <header>
-    <h1>Tridev Darshanam</h1>
-    <p>Your gateway to divine Indian pilgrimages</p>
+  <header class="hero-header">
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="rintu1.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-overlay">
+      <h1>𝑻𝒓𝒊𝒅𝒆𝒗 𝑫𝒂𝒓𝒔𝒉𝒂𝒏𝒂𝒎</h1>
+      <p>𝑬𝒙𝒑𝒆𝒓𝒊𝒆𝒏𝒄𝒆 𝑺𝒑𝒊𝒓𝒊𝒕𝒖𝒂𝒍 𝑱𝒐𝒖𝒓𝒏𝒆𝒚𝒔 𝑨𝒄𝒓𝒐𝒔𝒔 𝑰𝒏𝒅𝒊𝒂</p>
+    </div>
   </header>
 
-  <nav>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#tours">Tours</a></li>
-      <li><a href="#booking">Booking</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<nav style="display: flex; justify-content: space-between; align-items: center; padding: 10px 40px; background: linear-gradient(to right, #1e3c72, #2a5298); color: white;">
+  <!-- Left side: Logo + Title -->
+  <div style="display: flex; align-items: center; gap: 10px;">
+    <img src="logo3.jpg" alt="Tridev Darshanam Logo" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+    <span style="font-weight: 700; font-size: 1.2em;">Tridev Darshanam</span>
+  </div>
+
+  <!-- Right side: Navigation links -->
+  <ul style="list-style: none; display: flex; gap: 25px; margin: 0; padding: 0;">
+    <li><a href="#home" style="color: white; text-decoration: none;">Home</a></li>
+    <li><a href="#tours" style="color: white; text-decoration: none;">Tours</a></li>
+    <li><a href="#booking" style="color: white; text-decoration: none;">Booking</a></li>
+    <li><a href="#gallery" style="color: white; text-decoration: none;">Gallery</a></li>
+    <li><a href="#contact" style="color: white; text-decoration: none;">Contact</a></li>
+  </ul>
+</nav>
+
 
   <section id="home" class="hero">
     <div class="hero-content">
@@ -243,109 +283,224 @@
     </div>
   </section>
 
-  <section id="tours" class="section">
-    <h2>Divine Destinations</h2>
+  <section id="tours" class="section tours-section">
+    <h2>Our Divine Tours</h2>
     <div class="tour-grid">
-      <div class="tour-card">
-        <img src="kedar.webp" alt="Kedarnath" />
+      <div class="tour-card" id="kedarnath-card">
+        <img src="kedar1.webp" class="tour-image" />
         <h3>Kedarnath Darshanam</h3>
         <p>Explore the sacred Himalayan shrine of Lord Shiva.</p>
-        <a href="#" class="btn">Explore Tour</a>
+        <a href="kedarnath.html" class="btn">Explore Tour</a>  <!-- redirect to kedarnath.html -->
+
       </div>
-      <div class="tour-card">
-        <img src="amarnath.webp" alt="Amarnath" />
+
+      <div class="tour-card" id="amarnath-card">
+        <img src="amarnath1.webp" class="tour-image" />
         <h3>Amarnath Yatra</h3>
         <p>Witness the divine ice lingam in the Amarnath cave.</p>
-        <a href="#" class="btn">Explore Tour</a>
+        <a href="amarnath.html" class="btn">Explore Tour</a>  <!-- redirect to amarnath.html -->
       </div>
-      <div class="tour-card">
-        <img src="varanashi.webp" alt="Varanasi" />
+
+      <div class="tour-card" id="varanasi-card">
+        <img src="varanasi1.webp" class="tour-image" />
         <h3>Varanasi Spiritual Tour</h3>
         <p>Feel the spiritual energy of the Ganga Aarti and ancient temples.</p>
-        <a href="#" class="btn">Explore Tour</a>
+        <a href="varanashi.html" class="btn">Explore Tour</a>  <!-- redirect to page html -->
       </div>
-      <div class="tour-card">
-        <img src="panchakedar.webp" alt="Panch Kedar" />
+
+      <div class="tour-card" id="panchkedar-card">
+        <img src="panchkedar1.webp" class="tour-image" />
         <h3>Panch Kedar Yatra</h3>
         <p>Embark on a divine circuit of five sacred Shiva temples in Uttarakhand.</p>
-        <a href="#" class="btn">Explore Tour</a>
+        <a href="panchkedar.html" class="btn">Explore Tour</a>    <!-- redirect to page html -->
       </div>
-      <div class="tour-card">
-        <img src="char dham1.webp" alt="Char Dham" />
+
+      <div class="tour-card" id="chardham-card">
+        <img src="chardham1.webp" class="tour-image" />
         <h3>Char Dham</h3>
-        <p>Visit the four holy shrines — Badrinath, Kedarnath, Gangotri, and Yamunotri — for a complete spiritual journey.</p>
-        <a href="#" class="btn">Explore Tour</a>
+        <p>Visit the four holy shrines — Badrinath, Kedarnath, Gangotri, and Yamunotri.</p>
+        <a href="chardham.html" class="btn">Explore Tour</a>    <!-- redirect to page html -->
       </div>
     </div>
   </section>
-<!-- Include EmailJS SDK -->
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-  (function(){
-    emailjs.init("1gIDjuYomj8Iq3yZj"); // Replace with your actual public key
-  })();
-</script>
 
-<!-- Booking Form -->
-<form id="bookingForm">
-  <input type="text" name="name" placeholder="Full Name" required>
-  <input type="email" name="email" placeholder="Email Address" required>
-  <select name="tour" required>
-    <option value="">Select Tour</option>
-    <option value="Kedarnath">Kedarnath</option>
-    <option value="Amarnath">Amarnath</option>
-    <option value="Varanasi">Varanasi</option>
-    <option value="Panch Kedar">Panch Kedar</option>
-    <option value="Char Dham">Char Dham</option>
-  </select>
-  <button type="submit">Book Now</button>
-</form>
+  <script>
+    const tourImages = {
+      "kedarnath-card": ["kedar1.webp", "kedar2.webp", "kedar3.webp"],
+      "amarnath-card": ["amarnath1.webp", "amarnath2.webp", "amarnath3.webp"],
+      "varanasi-card": ["varanasi1.webp", "varanasi2.webp", "varanasi3.webp"],
+      "panchkedar-card":["panchkedar1.webp","kedar1.webp", "panchkedar2.webp", "panchkedar3.webp","panchkedar4.webp","panchkedar5.webp"],
+      "chardham-card": ["chardham1.webp", "chardham2.webp", "chardham3.webp","chardham4.webp","chardham5.webp"],
+    };
 
-<!-- JavaScript to send email -->
-<script>
-  document.getElementById('bookingForm').addEventListener('submit', function(e) {
-    e.preventDefault();
+    Object.keys(tourImages).forEach(cardId => {
+      const images = tourImages[cardId];
+      const card = document.getElementById(cardId);
+      const img = card.querySelector('.tour-image');
+      let index = 0;
+      let interval;
 
-    emailjs.sendForm('service_dqp15km', 'template_18egqah', this)
-      .then(function() {
-        alert('Booking request sent successfully!');
-      }, function(error) {
-        alert('Failed to send booking. Please try again.');
-        console.log('EmailJS error:', error);
+      card.addEventListener('mouseenter', () => {
+        interval = setInterval(() => {
+          index = (index + 1) % images.length;
+          img.src = images[index];
+        }, 1000);
       });
+
+      card.addEventListener('mouseleave', () => {
+        clearInterval(interval);
+        img.src = images[0];
+        index = 0;
+      });
+    });
+  </script>
+
+  <section id="booking" class="section">
+    <h2>Book Your Spiritual Journey</h2>
+    <form id="bookingForm">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <select name="tour" required>
+        <option value="">Select Tour</option>
+        <option value="Kedarnath">Kedarnath</option>
+        <option value="Amarnath">Amarnath</option>
+        <option value="Varanashi">Varanashi</option>
+        <option value="Panch Kedar">Panch Kedar</option>
+        <option value="Char Dham">Char Dham</option>
+      </select>
+      <button type="submit">Book Now</button>
+    </form>
+  </section>
+
+
+<section id="gallery" class="section">
+  <h2>Traveler Gallery</h2>
+
+  <!-- Upload Form (Visible to Everyone) -->
+  <form id="photoUploadForm" enctype="multipart/form-data">
+    <input type="file" id="photoInput" accept="image/*" required>
+    <input type="text" id="photoName" placeholder="Your Name" required>
+    <button type="submit">Upload Photo</button>
+  </form>
+
+  <!-- Gallery Grid -->
+  <div id="galleryGrid" class="gallery-grid"></div>
+</section>
+
+<style>
+  /* ===== GALLERY SECTION STYLES ===== */
+  #gallery {
+    background-color: #f5f7fa;
+  }
+
+  #photoUploadForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 30px;
+  }
+
+  #photoUploadForm input, #photoUploadForm button {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 90%;
+    max-width: 400px;
+  }
+
+  #photoUploadForm button {
+    background-color: #2c3e50;
+    color: white;
+    cursor: pointer;
+    border: none;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.05);
+  }
+
+  .gallery-item p {
+    text-align: center;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+  }
+</style>
+
+<script>
+  // Simple client-side display (no backend yet)
+  const form = document.getElementById('photoUploadForm');
+  const grid = document.getElementById('galleryGrid');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const file = document.getElementById('photoInput').files[0];
+    const name = document.getElementById('photoName').value;
+
+    if (file && name) {
+      const reader = new FileReader();
+      reader.onload = function(event) {
+        const div = document.createElement('div');
+        div.classList.add('gallery-item');
+        div.innerHTML = `
+          <img src="${event.target.result}" alt="${name}">
+          <p>${name}</p>
+        `;
+        grid.appendChild(div);
+      };
+      reader.readAsDataURL(file);
+      form.reset();
+    }
   });
 </script>
 
-  <section class="section">
+
+
+  <section id="testimonial" class="section">
     <h2>What Our Travelers Say</h2>
     <div class="testimonial-slider">
-      <p>"The Kedarnath tour was life-changing. Every detail was beautifully managed!" – Ramesh S.</p>
+      <p>"An unforgettable spiritual journey! The guides were excellent and caring."</p>
     </div>
   </section>
 
-  <section id="contact" class="section">
-    <h2>Contact Us</h2>
-    <p>Email: divyayatra.booking@gmail.com</p>
-    <p>Phone: +91 85979 75403</p>
-    <p>Location: Purulia, West Bengal, India</p>
-  </section>
+ <section id="contact" class="section" style="font-size: .9;">
+  <h2>Contact Us</h2>
+  <div class="contact-details">
+    <p>📧 Email: <a href="mailto:divyayatra.booking@gmail.com">divyayatra.booking@gmail.com</a></p>
+    <p>📞 Phone: <a href="tel:+918597975403">+91 85979 75403</a></p>
+    <p>📍 Location: Purulia, West Bengal, India</p>
+  </div>
+</section>
 
-  <a href="https://wa.me/918597975403" class="whatsapp-chat" target="_blank">
-    💬 Chat with us
-  </a>
+
+  <a href="https://wa.me/918597975403" class="whatsapp-chat" target="_blank">Chat on WhatsApp</a>
 
   <footer>
-    <p>&copy; 2025 Divya Yatra Tour & Travel Company. Designed for a dynamic and spiritual travel experience across India.</p>
+    <p>© 2025 Tridev Darshanam. All rights reserved.</p>
   </footer>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
